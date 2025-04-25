@@ -6,12 +6,12 @@ public class Vagas
 {
 
     private int id;
-    private String numero;
+    private int numero;
     private Status status;
     private String placa;
     private LocalTime entrada;
 
-    public Vagas( String numero, Status status, String placa, LocalTime entrada)
+    public Vagas( int numero, Status status, String placa, LocalTime entrada)
     {
         this.numero = numero;
         this.status = status;
@@ -19,12 +19,15 @@ public class Vagas
         this.entrada = entrada;
     }
 
+    public Vagas()
+    {
+    }
 
     public int id() {return id;}
     public Vagas setId(int id) { this.id = id; return this;}
 
-    public String numero() {return numero;}
-    public Vagas setNumero(String numero) {this.numero = numero;return this;}
+    public int numero() {return numero;}
+    public Vagas setNumero(int numero) {this.numero = numero;return this;}
 
     public Status status() {return status;}
     public Vagas setStatus(Status status) {this.status = status;return this;}
