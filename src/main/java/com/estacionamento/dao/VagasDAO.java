@@ -6,7 +6,6 @@ import com.estacionamento.model.Vagas;
 
 import java.sql.*;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,7 +14,7 @@ public class VagasDAO
 {
     public List<Vagas> listarTodas() {
         List<Vagas> vagas = new ArrayList<>();
-        String sql = "SELECT * FROM Vagas";
+        String sql = "SELECT * FROM vagas";
 
         try(
                 Connection connection = Conexao.getConnection();
@@ -34,7 +33,7 @@ public class VagasDAO
 
 
                 Timestamp ts = rs.getTimestamp("entrada");
-                vaga.setEntrada(ts != null ? LocalTime.from(ts.toLocalDateTime()) : null);
+                vaga.setEntrada(ts != null ? ts.toLocalDateTime() : null);
 
                 vagas.add(vaga);
             }
@@ -48,7 +47,7 @@ public class VagasDAO
         return vagas;
     }
 
-    public boolean ocuparVaga(int numero,  String placa, LocalDateTime entrada)
+    public static boolean ocuparVaga(int numero, String placa, LocalDateTime entrada)
     {
         String sql = "UPDATE vagas SET status = ?, placa = ?, entrada = ? WHERE numero = ?";
 
@@ -108,7 +107,7 @@ public class VagasDAO
                     vaga.setPlaca(rs.getString("placa"));
 
                     Timestamp ts = rs.getTimestamp("entrada");
-                    vaga.setEntrada(ts != null ? LocalTime.from(ts.toLocalDateTime()) : null);
+                    vaga.setEntrada(ts != null ? ts.toLocalDateTime() : null);
                 }
             }
 

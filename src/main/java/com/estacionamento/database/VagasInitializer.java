@@ -37,7 +37,7 @@ public class VagasInitializer
                     }
                     else
                     {
-                        System.out.println("⚠️ Tabela 'vagas' já possui registros. Nenhuma vaga inserida.");
+                        System.out.println("Tabela 'vagas' já possui registros. Nenhuma vaga inserida.");
                     }
 
 

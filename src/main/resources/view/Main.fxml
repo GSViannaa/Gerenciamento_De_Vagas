@@ -24,8 +24,6 @@
 
                 <Label text="N. da Vaga"/>
                 <TextField fx:id="campoNumero" promptText="Ex: 12"/>
-                <Label text="Status"/>
-                <ComboBox fx:id="comboStatus"/>
 
             </HBox>
 
@@ -34,7 +32,8 @@
                 <Label text="Placa"/>
                 <TextField fx:id="campoPlaca"/>
                 <Label text="Entrada"/>
-                <TextField fx:id="campoEntrada" editable="false"/>
+                <Label fx:id="relogioEntrada" text="00:00:00" />
+
 
             </HBox>
 
